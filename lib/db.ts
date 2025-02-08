@@ -1,4 +1,3 @@
-import { error } from "console";
 import mongoose from "mongoose";
 
 const MONGOOSE_URI = process.env.MONGOOSE_URI;
@@ -28,6 +27,7 @@ export const connectDB = async () => {
   }
   try {
     cached.conn = await cached.promise;
+    console.log("db connected");
   } catch (error) {
     cached.promise = null;
     throw error;
